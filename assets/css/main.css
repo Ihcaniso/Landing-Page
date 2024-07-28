@@ -1977,23 +1977,74 @@ input, select, textarea {
 			background-color: #7eaeac;
 		}
 
-/* Item */
-
-	.item {
-		box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
-		margin-bottom: 40px;
-	}
-
-		.item header {
-			background: #fff;
-			margin: 0;
-			padding: 1em 0 1em 0;
-			font-size: 0.8em;
-		}
-
-			.item header h3 {
-				font-size: 1em;
-			}
+/* Timeline */
+.timeline {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  .timeline::after {
+	content: '';
+	position: absolute;
+	width: 6px;
+	background-color: #dce3e2;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3px;
+  }
+  
+  .timeline-container {
+	padding: 10px 40px;
+	position: relative;
+	background-color: inherit;
+	width: 50%;
+  }
+  
+  .timeline-container::after {
+	content: '';
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	right: -17px;
+	background-color: white;
+	border: 4px solid #7eaeac;
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
+  }
+  
+  .timeline-container.left::after {
+	left: -16px;
+  }
+  
+  .timeline-container.right {
+	left: 50%;
+  }
+  
+  .timeline-container.left {
+	left: 0;
+  }
+  
+  .timeline-content {
+	padding: 20px 30px;
+	background-color: white;
+	position: relative;
+	border-radius: 6px;
+  }
+  
+  .timeline-content h2 {
+	margin-top: 0;
+	color: #7eaeac;
+  }
+  
+  .timeline-content p {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.6;
+  }
+  
 
 /* Icons */
 
