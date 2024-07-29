@@ -110,9 +110,10 @@ input, select, textarea {
 		color: #888;
 	}
 
+	/* Headers with sky blue color */
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: #87CEEB; /* Sky blue color */
 		line-height: 1.5em;
 	}
 
@@ -1847,12 +1848,11 @@ input, select, textarea {
 	form select,
 	form textarea {
 		position: relative;
-		-webkit-appearance: none;
 		display: block;
 		border: 0;
 		outline: 0;
 		background: #fff;
-		background: rgba(255, 255, 255, 0.75);
+		background: rgba(0, 0, 0, 0.75);
 		width: 100%;
 		border-radius: 0.35em;
 		padding: 0.75em 1em 0.75em 1em;
@@ -1885,19 +1885,19 @@ input, select, textarea {
 	}
 
 	form ::-webkit-input-placeholder {
-		color: #555 !important;
+		color: #ffffff !important;
 	}
 
 	form :-moz-placeholder {
-		color: #555 !important;
+		color: #ffffff !important;
 	}
 
 	form ::-moz-placeholder {
-		color: #555 !important;
+		color: #ffffff !important;
 	}
 
 	form :-ms-input-placeholder {
-		color: #555 !important;
+		color: #ffffff !important;
 	}
 
 	form ::-moz-focus-inner {
@@ -1977,56 +1977,36 @@ input, select, textarea {
 			background-color: #7eaeac;
 		}
 
-/* Timeline Section */
+/* Apply the background to the entire timeline page */
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 40px 0;
 }
 
-.timeline-container {
-    padding: 10px 40px;
-    position: relative;
-    background: inherit;
-    width: 50%;
-}
-
-.timeline-container.left::after {
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -15px;
-    width: 30px;
-    background: white;
-}
-
-.timeline-container.right::after {
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -15px;
-    width: 30px;
-    background: white;
-}
-
-.timeline-container::after {
+.timeline::after {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: #FF9F55;
+    background: #ffffff; /* Dark grey color */
+    opacity: 0.6; /* Slightly faded effect */
     top: 0;
     bottom: 0;
     left: 50%;
     margin-left: -3px;
 }
 
-.timeline-content {
-    padding: 20px 30px;
-    background-color: white;
+.timeline-container {
+    padding: 10px 40px;
     position: relative;
+    background: #5a5a5a88; /* Dark gray color for rectangles */
     border-radius: 6px;
+    width: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #88888893; /* Dark gray border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for more pronounced 3D effect */
+    transform: translateZ(0); /* To enable smooth shadow rendering */
 }
 
 .timeline-container.left {
@@ -2037,38 +2017,63 @@ input, select, textarea {
     left: 50%;
 }
 
-.timeline-container.left::before {
+.timeline-container::before {
     content: " ";
     height: 0;
     position: absolute;
     top: 22px;
     width: 0;
     z-index: 1;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-}
-
-.timeline-container.right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
 }
 
+.timeline-container.right::before {
+    left: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.timeline-container.left::before {
+    right: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #5a5a5a93; /* Dark gray background for the content area */
+    position: relative;
+    border-radius: 6px;
+    font-weight: bold; /* Embolden all text */
+    color: #87CEEB; /* Sky blue color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: gives a bit of metallic sheen effect */
+}
+
+.timeline-content p {
+    margin: 0; /* Remove default margins */
+}
+
+/* Make dates slightly larger */
+.timeline-content p span.date {
+    font-size: 1.2em; /* Adjust size as needed */
+    font-weight: bold;
+}
+
 hr {
     border: 0;
     height: 1px;
-    background: #FF9F55;
-    background-image: linear-gradient(to right, #FF9F55, #FF9F55, #FF9F55);
+    background: linear-gradient(to right, #87CEEB, #00BFFF); /* Sky blue gradient */
 }
+
+/* Additional styling for small text */
+.small-text {
+    font-size: 0.9em; /* Adjust size for smaller text */
+}
+
+
+
   
 
 /* Icons */
@@ -2167,7 +2172,7 @@ hr {
 			}
 
 				#header .icons a:hover {
-					color: #fff;
+					color: #ffffff;
 				}
 
 	#logo {
@@ -2331,10 +2336,22 @@ hr {
 }
 
 #main > section.two {
-    background-color: rgba(0, 0, 0, 0.8); /* Faded black background */
+    background: linear-gradient(to top right, 
+        #64434E 40%,              /* Start with #64434E */
+        #64434E 60%,
+		#546261 80%,   /* Transition to a lighter shade */
+        #546261 80%,  /* Continue fading to even lighter shade */
+		#546261 90%,  /* Continue fading to even lighter shade */
+        rgba(54, 54, 54, 0.74) 98%    /* Fade into white */
+    );
     padding: 4em 0;
     text-align: center;
 }
+
+#main > section.two h1 {
+    color: white;
+}
+
 
 #main > section.three {
     background-color: #ecf1f1;

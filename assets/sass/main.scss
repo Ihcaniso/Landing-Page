@@ -405,7 +405,6 @@
 		select,
 		textarea {
 			position: relative;
-			-webkit-appearance: none;
 			display: block;
 			border: 0;
 			outline: 0;
@@ -603,7 +602,7 @@
 				@include vendor('transition', 'color 0.35s ease-in-out');
 
 				&:hover {
-					color: #fff;
+					color: #000000;
 				}
 			}
 		}
@@ -747,7 +746,7 @@
 					border-color: inherit;
 
 					&:hover {
-						border-bottom-color: rgba(255, 255, 255, 0);
+						border-bottom-color: rgb(60, 255, 1);
 					}
 				}
 			}
